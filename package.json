@@ -1,6 +1,6 @@
 {
   "name": "ivy-redactor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ember component for Redactor.",
   "main": "dist/cjs/main.js",
   "scripts": {
