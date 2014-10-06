@@ -58,7 +58,7 @@ App.initializer(ivy.redactor.initializer);
 ## Usage
 
 ```handlebars
-{{ivy-redactor value=myCode}}
+{{ivy-redactor value=myHTML}}
 ```
 
 There are also a ton of [Redactor settings][5] you can set as well:
