@@ -30,6 +30,14 @@ test('should update value property when Redactor changes', function() {
   equal(component.get('value'), '<p>abc</p>', 'value is updated');
 });
 
+test('should tear down Redactor without throwing an exception', function() {
+  var component = this.subject();
+  this.append();
+
+  Ember.run(component, 'destroy');
+  ok(true, 'no exception was thrown while tearing down Redactor');
+});
+
 function optionTest(key, value) {
   test('should set Redactor ' + key + ' option', function() {
     var props = {};
