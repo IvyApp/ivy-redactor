@@ -2,6 +2,8 @@
 
 ## master
 
+## 0.2.1
+
 * Add missing `ivy-redactor/index` module.
 
 ## 0.2.0
