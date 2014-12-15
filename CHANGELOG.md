@@ -2,6 +2,8 @@
 
 ## master
 
+* Add missing `ivy-redactor/index` module.
+
 ## 0.2.0
 
 * Convert to an ember-cli addon.
