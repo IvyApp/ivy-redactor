@@ -2,6 +2,8 @@
 
 ## master
 
+* Convert to an ember-cli addon.
+
 ## 0.1.1
 
 * Fix `destroy` call in `willDestroyElement`. Redactor 10 changed this to

@@ -1,10 +1,11 @@
 # ivy-redactor
 
-An [Ember][1] component for the [Redactor][2] WYSIWYG editor.
+An [Ember](http://emberjs.com) component for the
+[Redactor](http://imperavi.com/redactor/) WYSIWYG editor.
 
 This is only a component for interacting with Redactor, and does not include
 Redactor itself. Redactor is commercial software that you must purchase
-a license for. You can do so [here][3].
+a license for. You can do so [here](http://imperavi.com/redactor/download/).
 
 This library has been tested against Redactor 10.0. It will not work with older
 versions due to some fairly major API changes made in Redactor 10.
@@ -12,48 +13,20 @@ versions due to some fairly major API changes made in Redactor 10.
 ## Installation
 
 ```sh
-$ npm install ivy-redactor
+npm install --save-dev ivy-redactor
+ember generate ivy-redactor
 ```
 
-or...
+You'll also need to copy the Redactor library files into `vendor/redactor`.
+
+Or if you aren't using ember-cli, you can use this library as a standalone
+[Bower](http://bower.io/) package:
 
 ```sh
-$ bower install ivy-redactor
+bower install --save ivy-codemirror
 ```
 
-Then include the script(s) into your application.
-
-### npm + browserify
-
-```js
-require('ivy-redactor');
-```
-
-### amd
-
-Register `ivy-redactor` as a [package][4], then:
-
-```js
-define(['ivy-redactor'], ...)
-```
-
-### named-amd
-
-You ought to know what you're doing if this is the case.
-
-### globals
-
-```html
-<script src="bower_components/ivy-redactor/dist/globals/main.js"></script>
-```
-
-You'll also need to install the initializer to make the `ivy-redactor`
-component available in your templates:
-
-```js
-App = Ember.Application.create(/* ... */);
-App.initializer(ivy.redactor.initializer);
-```
+...and then add Redactor and the `ivy-redactor.js` script to your page.
 
 ## Usage
 
@@ -61,7 +34,9 @@ App.initializer(ivy.redactor.initializer);
 {{ivy-redactor value=myHTML}}
 ```
 
-There are also a ton of [Redactor settings][5] you can set as well:
+There are also a ton of
+[Redactor settings](http://imperavi.com/redactor/docs/settings/) you can set as
+well:
 
   * `activeButtons`
   * `activeButtonsStates`
@@ -114,26 +89,19 @@ initialized.
 
 ## Contributing
 
-```sh
-$ git clone # <this repo>
-$ npm install
-```
-
-Then place `redactor.css` and `redactor.js` into the `redactor` directory at
-the root of this project.
-
-```sh
-# during dev
-$ broccoli serve
-# new tab
-$ testem
-```
-
 Fork this repo, make a new branch, and send a pull request. Make sure your
 change is tested or it won't be merged.
 
-[1]: http://emberjs.com
-[2]: http://imperavi.com/redactor/
-[3]: http://imperavi.com/redactor/download/
-[4]: http://requirejs.org/docs/api.html#packages
-[5]: http://imperavi.com/redactor/docs/settings/
+To run tests:
+
+```sh
+git clone # <this repo>
+npm install
+npm test
+```
+
+Or, to start a test server that continually runs (for development):
+
+```sh
+ember test --server
+```

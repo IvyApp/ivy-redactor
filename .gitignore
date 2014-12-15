@@ -1,5 +1,19 @@
-bower_components
-dist
-node_modules
-redactor/*
-tmp
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/standalone/dist
+/tmp
+
+# dependencies
+/node_modules
+/bower_components
+/vendor/redactor/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
