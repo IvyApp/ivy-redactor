@@ -2,6 +2,8 @@
 
 ## master
 
+* Upgrade to ember-cli 0.1.5.
+
 ## 0.2.1
 
 * Add missing `ivy-redactor/index` module.
