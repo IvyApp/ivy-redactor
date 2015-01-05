@@ -5,7 +5,7 @@
     "Dray Lacy"
   ],
   "description": "Ember component for Redactor.",
-  "main": "./ivy-redactor-VERSION_STRING_PLACEHOLDER.js",
+  "main": "./ivy-redactor.js",
   "keywords": [
     "ember",
     "redactor"

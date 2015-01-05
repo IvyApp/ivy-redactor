@@ -2,6 +2,8 @@
 
 ## master
 
+* Remove version suffix from ivy-redactor.js.
+
 ## 1.0.0-beta.1
 
 * Upgrade to ember-cli 0.1.5.
