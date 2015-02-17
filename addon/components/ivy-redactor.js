@@ -117,22 +117,7 @@ export default Ember.Component.extend({
     'activeButtonsStates',
 
     'shortcuts',
-    'shortcutsAdd',
-
-    // private
-    'buffer',
-    'rebuffer',
-    'emptyHtml',
-    'invisibleSpace',
-    'imageTypes',
-    'indentValue',
-    'verifiedTags',
-    'inlineTags',
-    'alignmentTags',
-    'blockLevelElements',
-
-    // lang
-    'langs'
+    'shortcutsAdd'
   ],
 
   /**
