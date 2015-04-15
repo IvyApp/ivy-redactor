@@ -89,7 +89,7 @@ export default Ember.Component.extend({
     this.$().redactor(redactorOptions);
 
     this.addObserver('value', this, this._valueDidChange);
-    this._updateRedactorCode();
+    this._valueDidChange();
   }),
 
   _setupRedactorCallbacks: function(options) {
