@@ -82,11 +82,12 @@ export default Ember.Component.extend({
   }),
 
   _initRedactor: Ember.on('didInsertElement', function() {
-    var redactorOptions = {};
-    this._setupRedactorCallbacks(redactorOptions);
-    this._setupRedactorSettings(redactorOptions);
+    var options = {};
 
-    this.$().redactor(redactorOptions);
+    this._setupRedactorCallbacks(options);
+    this._setupRedactorSettings(options);
+
+    this.$().redactor(options);
 
     this.addObserver('value', this, this._valueDidChange);
     this._valueDidChange();
