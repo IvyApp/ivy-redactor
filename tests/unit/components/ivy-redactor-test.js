@@ -3,7 +3,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 
 moduleForComponent('ivy-redactor');
 
-test('should update Redactor when value property is changed', function() {
+test('should update Redactor when value property is changed', function(assert) {
   var component = this.subject({ tabifier: false });
   this.append();
 
@@ -11,17 +11,16 @@ test('should update Redactor when value property is changed', function() {
     component.set('value', '<p>abc</p>');
   });
 
-  stop();
-
-  // Redactor's `code.sync` method introduces a 10ms delay, so we wait for 50ms
-  // here just to be safe.
-  setTimeout(function() {
-    equal(component.$().redactor('code.get'), '<p>abc</p>', 'value is updated');
-    start();
-  }, 50);
+  return new Ember.RSVP.Promise(function(resolve) {
+    // Redactor's `code.sync` method introduces a 10ms delay, so we wait for
+    // 50ms here just to be safe.
+    setTimeout(resolve, 50);
+  }).then(function() {
+    assert.equal(component.$().redactor('code.get'), '<p>abc</p>', 'value is updated');
+  });
 });
 
-test('should update value property when Redactor changes', function() {
+test('should update value property when Redactor changes', function(assert) {
   var component = this.subject();
   this.append();
 
@@ -30,26 +29,26 @@ test('should update value property when Redactor changes', function() {
     component.$().redactor('core.setCallback', 'change', '<p>abc</p>');
   });
 
-  equal(component.get('value'), '<p>abc</p>', 'value is updated');
+  assert.equal(component.get('value'), '<p>abc</p>', 'value is updated');
 });
 
-test('should tear down Redactor without throwing an exception', function() {
+test('should tear down Redactor without throwing an exception', function(assert) {
   var component = this.subject();
   this.append();
 
   Ember.run(component, 'destroy');
-  ok(true, 'no exception was thrown while tearing down Redactor');
+  assert.ok(true, 'no exception was thrown while tearing down Redactor');
 });
 
 function optionTest(key, value) {
-  test('should set Redactor ' + key + ' option', function() {
+  test('should set Redactor ' + key + ' option', function(assert) {
     var props = {};
     props[key] = value;
     var component = this.subject(props);
     this.append();
 
     var redactor = component.$().redactor('core.getObject');
-    deepEqual(redactor.opts[key], value, 'value of ' + key + ' option is correct');
+    assert.deepEqual(redactor.opts[key], value, 'value of ' + key + ' option is correct');
   });
 }
 
@@ -98,12 +97,12 @@ optionTest('toolbarFixedTarget', '#my-parent-layer');
 optionTest('toolbarOverflow', true);
 
 function optionDefaultTest(key, defaultValue) {
-  test('should have correct default for ' + key + ' option', function() {
+  test('should have correct default for ' + key + ' option', function(assert) {
     var component = this.subject();
     this.append();
 
     var redactor = component.$().redactor('core.getObject');
-    deepEqual(redactor.opts[key], defaultValue, 'default value of ' + key + ' option is correct');
+    assert.deepEqual(redactor.opts[key], defaultValue, 'default value of ' + key + ' option is correct');
   });
 }
 
