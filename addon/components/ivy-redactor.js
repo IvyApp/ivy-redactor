@@ -75,11 +75,11 @@ export default Ember.Component.extend({
     this.set('value', html);
   },
 
-  _destroyRedactor: function() {
+  _destroyRedactor: Ember.on('willDestroyElement', function() {
     this.removeObserver('value', this, this._valueDidChange);
 
     this.$().redactor('core.destroy');
-  },
+  }),
 
   _initRedactor: Ember.on('didInsertElement', function() {
     var redactorOptions = {};
@@ -90,8 +90,6 @@ export default Ember.Component.extend({
 
     this.addObserver('value', this, this._valueDidChange);
     this._updateRedactorCode();
-
-    this.one('willDestroyElement', this, this._destroyRedactor);
   }),
 
   _setupRedactorCallbacks: function(options) {
