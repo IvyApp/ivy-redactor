@@ -12,6 +12,12 @@ export default Ember.Component.extend({
 
   tagName: 'textarea',
 
+  concatenatedProperties: ['redactorCallbacks', 'redactorSettings'],
+
+  redactorCallbacks: [
+    'changeCallback'
+  ],
+
   redactorSettings: [
     'activeButtons',
     'activeButtonsStates',
@@ -75,19 +81,29 @@ export default Ember.Component.extend({
     this.$().redactor('core.destroy');
   },
 
-  initRedactor: Ember.on('didInsertElement', function() {
-    var redactorOptions = {};
+  _setupRedactorCallbacks: function(options) {
+    Ember.EnumerableUtils.forEach(this.get('redactorCallbacks'), function(name) {
+      options[name] = Ember.run.bind(this, name);
+    }, this);
+  },
 
-    redactorOptions.changeCallback = Ember.run.bind(this, this.changeCallback);
-
+  _setupRedactorSettings: function(options) {
     Ember.EnumerableUtils.forEach(this.get('redactorSettings'), function(key) {
-      if (key in this) { redactorOptions[key] = this.get(key); }
+      if (key in this) {
+        options[key] = this.get(key);
+      }
     }, this);
 
     // By default, Redactor indents HTML when `code.get` is called. This is
     // a problem because `valueDidChange` will then always call `code.set`,
     // which resets the cursor position.
-    redactorOptions.tabifier = false;
+    options.tabifier = false;
+  },
+
+  initRedactor: Ember.on('didInsertElement', function() {
+    var redactorOptions = {};
+    this._setupRedactorCallbacks(redactorOptions);
+    this._setupRedactorSettings(redactorOptions);
 
     this.$().redactor(redactorOptions);
 
