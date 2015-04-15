@@ -1,6 +1,6 @@
 {
   "name": "ivy-redactor",
-  "version": "1.0.0-beta.2+canary",
+  "version": "1.0.0-beta.3+canary",
   "description": "Redactor WYSIWYG editor integration for Ember.",
   "directories": {
     "doc": "doc",
