@@ -121,6 +121,6 @@ export default Ember.Component.extend({
   },
 
   _valueDidChange: function() {
-    Ember.run.once(this, this._updateRedactorCode);
+    Ember.run.scheduleOnce('afterRender', this, this._updateRedactorCode);
   }
 });
