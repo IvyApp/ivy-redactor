@@ -12,21 +12,34 @@ versions due to some fairly major API changes made in Redactor 10.
 
 ## Installation
 
+For Ember CLI versions >= 0.2.3:
+
+```sh
+ember install ivy-redactor
+```
+
+For Ember CLI versions 0.1.5 through 0.2.3:
+
+```sh
+ember install:addon ivy-redactor
+```
+
+For Ember CLI versions < 0.1.5:
+
 ```sh
 npm install --save-dev ivy-redactor
 ember generate ivy-redactor
 ```
 
-You'll also need to copy the Redactor library files into `vendor/redactor`.
-
-Or if you aren't using ember-cli, you can use this library as a standalone
-[Bower](http://bower.io/) package:
+Or, if you aren't using Ember CLI, you can install a standalone build:
 
 ```sh
-bower install --save ivy-codemirror
+bower install --save ivy-redactor
 ```
 
-...and then add Redactor and the `ivy-redactor.js` script to your page.
+And then include the `ivy-redactor.js` file in your page.
+
+You'll also need to copy the Redactor library files into `vendor/redactor`.
 
 ## Usage
 
