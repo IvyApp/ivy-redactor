@@ -19,50 +19,111 @@ export default Ember.Component.extend({
   ],
 
   redactorSettings: [
-    'activeButtons',
-    'activeButtonsStates',
-    'allowedAttr',
-    'allowedTags',
-    'buttonSource',
-    'buttons',
-    'buttonsHide',
-    'buttonsHideOnMobile',
+    // settings
+    'lang',
+    'direction',
+
+    'plugins',
+
+    'focus',
+    'focusEnd',
+
+    'placeholder',
+
+    'visual',
+    'tabindex',
+
+    'minHeight',
+    'maxHeight',
+
+    'linebreaks',
+    'replaceDivs',
+    'paragraphize',
+    'cleanStyleOnEnter',
+    'enterKey',
+
     'cleanOnPaste',
     'cleanSpaces',
-    'cleanStyleOnEnter',
-    'convertImagesLinks',
+    'pastePlainText',
+
+    'autosave',
+    'autosaveName',
+    'autosaveInterval',
+    'autosaveOnChange',
+
+    'linkTooltip',
+    'linkProtocol',
+    'linkNofollow',
+    'linkSize',
+
+    'imageEditable',
+    'imageLink',
+    'imagePosition',
+    'imageFloatMargin',
+    'imageResizable',
+
+    'imageUpload',
+    'imageUploadParam',
+
+    'uploadImageField',
+
+    'dragImageUpload',
+
+    'fileUpload',
+    'fileUploadParam',
+
+    'dragFileUpload',
+
+    's3',
+
     'convertLinks',
     'convertUrlLinks',
+    'convertImageLinks',
     'convertVideoLinks',
-    'deniedTags',
-    'formatting',
-    'formattingAdd',
-    'linebreaks',
-    'linkNofollow',
-    'linkProtocol',
-    'linkSize',
-    'linkTooltip',
-    'maxHeight',
-    'minHeight',
-    'paragraphize',
-    'pastePlainText',
-    'placeholder',
+
     'preSpaces',
-    'removeComments',
-    'removeDataAttr',
-    'removeEmpty',
-    'replaceDivs',
-    'replaceStyles',
-    'replaceTags',
-    'shortcuts',
-    'shortcutsAdd',
     'tabAsSpaces',
-    'tabindex',
+    'tabKey',
+
+    'scrollTarget',
+
     'toolbar',
-    'toolbarExternal',
     'toolbarFixed',
     'toolbarFixedTarget',
-    'toolbarOverflow'
+    'toolbarFixedTopOffset',
+    'toolbarExternal',
+    'toolbarOverflow',
+
+    'source',
+    'buttons',
+
+    'buttonsHide',
+    'buttonsHideOnMobile',
+
+    'formatting',
+    'formattingAdd',
+
+    'tabifier',
+
+    'deniedTags',
+    'allowedTags',
+
+    'removeComments',
+    'replaceTags',
+    'replaceStyles',
+    'removeDataAttr',
+
+    'removeAttr',
+    'allowedAttr',
+
+    'removeWithoutAttr',
+    'removeEmpty',
+
+    'activeButtons',
+    'activeButtonsStates',
+
+    'shortcuts',
+    'shortcutsAdd'
   ],
 
   /**
