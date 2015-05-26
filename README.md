@@ -7,8 +7,8 @@ This is only a component for interacting with Redactor, and does not include
 Redactor itself. Redactor is commercial software that you must purchase
 a license for. You can do so [here](http://imperavi.com/redactor/download/).
 
-This library has been tested against Redactor 10.0. It will not work with older
-versions due to some fairly major API changes made in Redactor 10.
+This library has been tested against Redactor 10.1.2. It will not work with
+older versions due to some fairly major API changes made in Redactor 10.
 
 ## Installation
 
@@ -90,7 +90,10 @@ well:
   * `shortcutsAdd`
   * `tabAsSpaces`
   * `tabindex`
-  * `toolbar`
+  * `toolbar`: Redactor 10.1.2 (and possibly other versions) will throw an
+    error during teardown if this option is set to `false`. I've filed an issue
+    with Imperavi, so hopefully this will be resolved in the next Redactor
+    release. Until then, use this option at your own peril.
   * `toolbarExternal`
   * `toolbarFixed`
   * `toolbarFixedTarget`

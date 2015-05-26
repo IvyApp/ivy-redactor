@@ -58,7 +58,6 @@ optionTest('activeButtons', ['italic', 'bold']);
 optionTest('activeButtonsStates', { b: 'bold' });
 optionTest('allowedAttr', [['p', 'class']]);
 optionTest('allowedTags', ['p']);
-optionTest('buttonSource', true);
 optionTest('buttons', ['formatting']);
 optionTest('buttonsHide', ['image', 'link']);
 optionTest('buttonsHideOnMobile', ['image', 'video']);
@@ -90,9 +89,16 @@ optionTest('replaceDivs', false);
 optionTest('replaceStyles', [['font-weight:\\s?bold', 'b']]);
 optionTest('replaceTags', [['b', 'strong']]);
 optionTest('shortcuts', false);
+optionTest('source', false);
 optionTest('tabAsSpaces', 2);
 optionTest('tabindex', 2);
-optionTest('toolbar', false);
+
+// TODO: Setting toolbar to false seems to make Redactor 10.1.2 to blow up when
+// `core.destroy` is invoked. Seemingly it tries to tear down things in the
+// toolbar, when the toolbar doesn't exist. I've filed a support request with
+// them to fix this, so once they've resolved it this test can be re-enabled.
+// optionTest('toolbar', false);
+
 optionTest('toolbarExternal', '#your-toolbar-layer-id');
 optionTest('toolbarFixed', false);
 optionTest('toolbarFixedTarget', '#my-parent-layer');
@@ -112,8 +118,7 @@ optionDefaultTest('activeButtons', ['deleted', 'italic', 'bold', 'underline', 'u
 optionDefaultTest('activeButtonsStates', { b: 'bold', strong: 'bold', i: 'italic', em: 'italic', del: 'deleted', strike: 'deleted', ul: 'unorderedlist', ol: 'orderedlist', u: 'underline' });
 optionDefaultTest('allowedAttr', false);
 optionDefaultTest('allowedTags', false);
-optionDefaultTest('buttonSource', false);
-optionDefaultTest('buttons', ['formatting', 'bold', 'italic', 'deleted', 'unorderedlist', 'orderedlist', 'outdent', 'indent', 'image', 'file', 'link', 'alignment', 'horizontalrule']);
+optionDefaultTest('buttons', ['html', 'formatting', 'bold', 'italic', 'deleted', 'unorderedlist', 'orderedlist', 'outdent', 'indent', 'image', 'file', 'link', 'alignment', 'horizontalrule']);
 optionDefaultTest('buttonsHide', []);
 optionDefaultTest('buttonsHideOnMobile', []);
 optionDefaultTest('cleanOnPaste', true);
@@ -123,7 +128,7 @@ optionDefaultTest('convertImagesLinks', undefined);
 optionDefaultTest('convertLinks', true);
 optionDefaultTest('convertUrlLinks', true);
 optionDefaultTest('convertVideoLinks', true);
-optionDefaultTest('deniedTags', ['html', 'head', 'link', 'body', 'meta', 'script', 'style', 'applet']);
+optionDefaultTest('deniedTags', ['script', 'style', 'html', 'head', 'link', 'body', 'meta', 'applet']);
 optionDefaultTest('formatting', ['p', 'blockquote', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']);
 optionDefaultTest('formattingAdd', false);
 optionDefaultTest('linebreaks', false);
@@ -144,6 +149,7 @@ optionDefaultTest('replaceDivs', true);
 optionDefaultTest('replaceStyles', [['font-weight:\\s?bold', 'strong'], ['font-style:\\s?italic', 'em'], ['text-decoration:\\s?underline', 'u'], ['text-decoration:\\s?line-through', 'del']]);
 optionDefaultTest('replaceTags', [['strike', 'del']]);
 optionDefaultTest('shortcutsAdd', false);
+optionDefaultTest('source', true);
 optionDefaultTest('tabAsSpaces', false);
 optionDefaultTest('tabindex', false);
 optionDefaultTest('toolbarExternal', false);
