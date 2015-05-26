@@ -1,11 +1,13 @@
 import Ember from 'ember';
 import { moduleForComponent, test } from 'ember-qunit';
 
-moduleForComponent('ivy-redactor');
+moduleForComponent('ivy-redactor', {
+  unit: true
+});
 
 test('should update Redactor when value property is changed', function(assert) {
   var component = this.subject({ tabifier: false });
-  this.append();
+  this.render();
 
   Ember.run(function() {
     component.set('value', '<p>abc</p>');
@@ -22,7 +24,7 @@ test('should update Redactor when value property is changed', function(assert) {
 
 test('should update value property when Redactor changes', function(assert) {
   var component = this.subject();
-  this.append();
+  this.render();
 
   Ember.run(function() {
     // Simulate Redactor firing a `change` event.
@@ -34,7 +36,7 @@ test('should update value property when Redactor changes', function(assert) {
 
 test('should tear down Redactor without throwing an exception', function(assert) {
   var component = this.subject();
-  this.append();
+  this.render();
 
   Ember.run(component, 'destroy');
   assert.ok(true, 'no exception was thrown while tearing down Redactor');
@@ -45,7 +47,7 @@ function optionTest(key, value) {
     var props = {};
     props[key] = value;
     var component = this.subject(props);
-    this.append();
+    this.render();
 
     var redactor = component.$().redactor('core.getObject');
     assert.deepEqual(redactor.opts[key], value, 'value of ' + key + ' option is correct');
@@ -99,7 +101,7 @@ optionTest('toolbarOverflow', true);
 function optionDefaultTest(key, defaultValue) {
   test('should have correct default for ' + key + ' option', function(assert) {
     var component = this.subject();
-    this.append();
+    this.render();
 
     var redactor = component.$().redactor('core.getObject');
     assert.deepEqual(redactor.opts[key], defaultValue, 'default value of ' + key + ' option is correct');
