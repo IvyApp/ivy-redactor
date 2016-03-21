@@ -1,3 +1,1 @@
-import IvyRedactorComponent from 'ivy-redactor/components/ivy-redactor';
-
-export default IvyRedactorComponent;
+export { default } from 'ivy-redactor/components/ivy-redactor';
