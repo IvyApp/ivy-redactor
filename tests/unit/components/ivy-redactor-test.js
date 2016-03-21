@@ -147,7 +147,7 @@ optionDefaultTest('removeDataAttr', false);
 optionDefaultTest('removeEmpty', ['p']);
 optionDefaultTest('replaceDivs', true);
 optionDefaultTest('replaceStyles', [['font-weight:\\s?bold', 'strong'], ['font-style:\\s?italic', 'em'], ['text-decoration:\\s?underline', 'u'], ['text-decoration:\\s?line-through', 'del']]);
-optionDefaultTest('replaceTags', [['strike', 'del']]);
+optionDefaultTest('replaceTags', [['strike', 'del'], ['b', 'strong']]);
 optionDefaultTest('shortcutsAdd', false);
 optionDefaultTest('source', true);
 optionDefaultTest('tabAsSpaces', false);

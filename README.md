@@ -7,7 +7,8 @@ This is only a component for interacting with Redactor, and does not include
 Redactor itself. Redactor is commercial software that you must purchase
 a license for. You can do so [here](http://imperavi.com/redactor/download/).
 
-This library has been tested against Redactor 10.1.2. It will not work with
+**NOTE:** This library is for Redactor 10. It has been tested with the latest
+(and likely final) release of the 10.x series, 10.2.5. It does not work with
 older versions due to some fairly major API changes made in Redactor 10.
 
 ## Installation
