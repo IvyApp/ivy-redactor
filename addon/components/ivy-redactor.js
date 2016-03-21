@@ -94,13 +94,13 @@ export default Ember.Component.extend({
   }),
 
   _setupRedactorCallbacks: function(options) {
-    Ember.EnumerableUtils.forEach(this.get('redactorCallbacks'), function(name) {
+    this.get('redactorCallbacks').forEach(function(name) {
       options[name] = Ember.run.bind(this, name);
     }, this);
   },
 
   _setupRedactorSettings: function(options) {
-    Ember.EnumerableUtils.forEach(this.get('redactorSettings'), function(key) {
+    this.get('redactorSettings').forEach(function(key) {
       if (key in this) {
         options[key] = this.get(key);
       }
