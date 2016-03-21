@@ -71,7 +71,7 @@ export default Ember.Component.extend({
    * @method changeCallback
    * @param {String} html
    */
-  changeCallback: function(html) {
+  changeCallback(html) {
     this.set('value', html);
   },
 
@@ -93,13 +93,13 @@ export default Ember.Component.extend({
     this._valueDidChange();
   }),
 
-  _setupRedactorCallbacks: function(options) {
+  _setupRedactorCallbacks(options) {
     this.get('redactorCallbacks').forEach(function(name) {
       options[name] = Ember.run.bind(this, name);
     }, this);
   },
 
-  _setupRedactorSettings: function(options) {
+  _setupRedactorSettings(options) {
     this.get('redactorSettings').forEach(function(key) {
       if (key in this) {
         options[key] = this.get(key);
@@ -112,7 +112,7 @@ export default Ember.Component.extend({
     options.tabifier = false;
   },
 
-  _updateRedactorCode: function() {
+  _updateRedactorCode() {
     var value = this.get('value');
     var $elem = this.$();
 
@@ -121,7 +121,7 @@ export default Ember.Component.extend({
     }
   },
 
-  _valueDidChange: function() {
+  _valueDidChange() {
     Ember.run.scheduleOnce('afterRender', this, this._updateRedactorCode);
   }
 });
