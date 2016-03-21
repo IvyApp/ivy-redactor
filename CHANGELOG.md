@@ -2,6 +2,13 @@
 
 ## master
 
+## 1.0.0
+
+* Upgrade to ember-cli 2.4.1
+* Remove usage of EnumerableUtils, which was removed in Ember 2.0.
+* Remove standalone builds.
+* Add support for Redactor 10.2.5, the last 10.x release.
+
 ## 1.0.0-beta.2
 
 * Remove version suffix from ivy-redactor.js.
