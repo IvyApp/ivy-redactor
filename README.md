@@ -31,14 +31,6 @@ npm install --save-dev ivy-redactor
 ember generate ivy-redactor
 ```
 
-Or, if you aren't using Ember CLI, you can install a standalone build:
-
-```sh
-bower install --save ivy-redactor
-```
-
-And then include the `ivy-redactor.js` file in your page.
-
 You'll also need to copy the Redactor library files into `vendor/redactor`.
 
 ## Usage
