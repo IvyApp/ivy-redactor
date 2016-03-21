@@ -2,6 +2,12 @@
 
 ## master
 
+## 1.0.1
+
+* Stop using `Ember.on` for `didInsertElement` / `willDestroyElement`, in favor
+  of treating them as methods and calling `this._super` appropriately.
+* Remove unnecessary `polyfills-pkg` Bower dependency.
+
 ## 1.0.0
 
 * Upgrade to ember-cli 2.4.1
